@@ -19,6 +19,7 @@ public class BlogController {
     @GetMapping
     public ResponseEntity<List<Blog>> getAllBlogs() {
         List<Blog> blogList = blogService.getAllBlogs();
+        System.out.println("this code is in master branch");
         return ResponseEntity.ok(blogList);
     }
 
