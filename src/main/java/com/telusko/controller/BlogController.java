@@ -22,9 +22,4 @@ public class BlogController {
         return ResponseEntity.ok(blogList);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Blog> getBlogById(@PathVariable int id) {
-        Blog blog = blogService.getBlogById(id);
-        return ResponseEntity.ok(blog);
-    }
 }
