@@ -17,4 +17,10 @@ public class BlogServiceImpl implements BlogService{
     public List<Blog> getAllBlogs() {
         return blogRepo.findAll();
     }
+
+    @Override
+    public Blog getBlogById(int id) {
+        return blogRepo.findById(id).orElse(new Blog());
+    }
+
 }

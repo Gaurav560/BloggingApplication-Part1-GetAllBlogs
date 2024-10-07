@@ -4,10 +4,7 @@ import com.telusko.model.Blog;
 import com.telusko.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,11 @@ public class BlogController {
     public ResponseEntity<List<Blog>> getAllBlogs() {
         List<Blog> blogList = blogService.getAllBlogs();
         return ResponseEntity.ok(blogList);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Blog> getBlogById(@PathVariable int id) {
+        Blog blog = blogService.getBlogById(id);
+        return ResponseEntity.ok(blog);
     }
 }
